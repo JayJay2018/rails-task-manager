@@ -1,0 +1,20 @@
+<div class="grey-wrapper">
+  <div class="container own-cont text-center">
+
+    <h1>Tasks</h1>
+    <ul class="list-unstyled">
+      <% @tasks.each do |task| %>
+
+      <li>
+        <%= check_box_tag :completed, nil, task.completed, disabled: true %>
+        <%= link_to(task.title, task_path(task.id))   %>
+        <%=link_to "", task_path(task.id), :class => "far fa-trash-alt",
+        method: :delete,
+        data: { confirm: "Are you sure, dickhead?" } %>
+
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to("Add a new task", new_path, :class => 'btn btn-primary') %>
+  </div>
+</div>

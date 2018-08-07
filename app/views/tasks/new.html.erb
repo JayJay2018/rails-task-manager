@@ -1,0 +1,29 @@
+<div class="grey-wrapper">
+  <div class="container text-center own-cont">
+    <h1>New Task</h1>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+
+        <%= form_for(@task) do |f| %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+
+        <%= f.label :details %>
+        <%= f.text_field :details %>
+
+        <%= f.submit :class => 'btn btn-primary btn-xs' %>
+        <% end %>
+      </div>
+
+      <div class="col-xs-6 col-xs-offset-3">
+        <%= link_to("Back to list", tasks_path, :class => 'btn btn-primary')%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
